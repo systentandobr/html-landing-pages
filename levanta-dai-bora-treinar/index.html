@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LevantaDAI Bora Treinar! | O Sistema de Gestão para Academias Modernas</title>
+    <meta name="description" content="Transforme sua academia de bairro em uma referência. Gestão completa + App de Treino para seus alunos. Modernize agora.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            purple: '#8b5cf6',
+                            pink: '#ec4899',
+                            blue: '#3b82f6',
+                            surface: '#1e293b'
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to right bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-gradient {
+            background: linear-gradient(to right, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .phone-mockup {
+            border: 12px solid #1e293b;
+            border-radius: 2.5rem;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.8); }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        .pulse-glow {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-white font-sans antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-dumbbell text-brand-purple text-2xl"></i>
+                <span class="text-xl font-bold tracking-tight">LevantaDAI <span class="text-brand-pink">Bora Treinar</span></span>
+            </div>
+            
+            <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+                <a href="#solucao" class="hover:text-white transition">A Solução</a>
+                <a href="#app" class="hover:text-white transition">O App do Aluno</a>
+                <a href="#gestao" class="hover:text-white transition">Gestão</a>
+                <a href="#beneficios" class="hover:text-white transition">Benefícios</a>
+            </nav>
+
+            <a href="#contato" class="hidden md:block bg-brand-purple hover:bg-violet-700 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg shadow-purple-500/20">
+                Agendar Demonstração
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-brand-surface border-t border-white/10 p-4 md:hidden flex flex-col gap-4">
+            <a href="#solucao" class="block text-gray-300">A Solução</a>
+            <a href="#app" class="block text-gray-300">O App do Aluno</a>
+            <a href="#gestao" class="block text-gray-300">Gestão</a>
+            <a href="#contato" class="block bg-brand-purple text-center py-2 rounded-lg font-bold">Quero Modernizar</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-banner">
+        <!-- Blobs for atmosphere -->
+        <div class="blob bg-brand-purple w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="blob bg-brand-blue w-96 h-96 rounded-full bottom-0 right-0 translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                
+                <!-- Text Content -->
+                <div class="lg:w-1/2 z-10 fade-in">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-brand-pink text-sm font-semibold mb-6">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        Ideal para Academias de Pequeno e Médio Porte
+                    </div>
+                    
+                    <h1 class="text-4xl lg:text-6xl font-black leading-tight mb-6">
+                        Aposente as fichas de papel e <span class="text-gradient">profissionalize sua academia.</span>
+                    </h1>
+                    
+                    <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+                        O <strong>LevantaDAI</strong> é um  ecossistema Gym App completo que une uma <strong>ferramenta de gestão poderosa</strong> para você e um <strong>aplicativo moderno</strong> para seus alunos. Aumente a retenção e transforme alunos em fãs da sua marca.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contato" class="bg-gradient-to-r from-brand-purple to-brand-pink hover:opacity-90 text-white px-8 py-4 rounded-xl font-bold text-lg text-center transition shadow-xl shadow-purple-500/20 flex items-center justify-center gap-2 pulse-glow">
+                            Quero ver na prática <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#gestao" class="bg-white/5 border border-white/10 hover:bg-white/10 text-white px-8 py-4 rounded-xl font-semibold text-center transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-chart-line"></i> Ver Gestão Completa
+                        </a>
+                    </div>
+
+                    <div class="mt-8 flex items-center gap-4 text-sm text-gray-500">
+                        <div class="flex -space-x-2">
+                            <img src="assets/images/dashboard.png" class="w-8 h-8 rounded-full border-2 border-brand-dark object-cover" alt="Dashboard" onerror="this.src='https://randomuser.me/api/portraits/men/32.jpg'">
+                            <img src="assets/images/athlete_female.png" class="w-8 h-8 rounded-full border-2 border-brand-dark object-cover" alt="Tela 1" onerror="this.src='https://randomuser.me/api/portraits/women/44.jpg'">
+                            <img src="assets/images/athlete_male.png" class="w-8 h-8 rounded-full border-2 border-brand-dark object-cover" alt="Atleta" onerror="this.src='https://randomuser.me/api/portraits/men/85.jpg'">
+                        </div>
+                        <p>Usado por gestores que crescem 3x mais rápido.</p>
+                    </div>
+                </div>
+
+                <!-- Hero Banner Image -->
+                <div class="lg:w-1/2 relative flex justify-center">
+                    <div class="absolute inset-0 bg-brand-purple/20 blur-3xl rounded-full"></div>
+                    <!-- Using placeholder or user provided image logic here -->
+                    <div class="relative z-10 transform rotate-[-5deg] hover:rotate-0 transition duration-500 w-72 md:w-80">
+                         <!-- Fallback se a imagem não carregar, use um placeholder -->
+                        <img src="image_fa15be.jpg" onerror="this.src='https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'" alt="App Dashboard" class="phone-mockup shadow-2xl">
+                        
+                        <!-- Floating Cards -->
+                        <div class="absolute -right-12 top-20 bg-brand-surface p-4 rounded-xl border border-white/10 shadow-xl hidden md:block animate-bounce" style="animation-duration: 3s;">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-green-500/20 p-2 rounded-full text-green-400">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400">Check-in Realizado</p>
+                                    <p class="font-bold text-sm">Marcelio S.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -left-12 bottom-32 bg-brand-surface p-4 rounded-xl border border-white/10 shadow-xl hidden md:block animate-bounce" style="animation-duration: 4s;">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-brand-pink/20 p-2 rounded-full text-brand-pink">
+                                    <i class="fa-solid fa-fire"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400">Sequência Atual</p>
+                                    <p class="font-bold text-sm">12 Dias 🔥</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain vs Gain Section -->
+    <section id="solucao" class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">A diferença entre sobreviver e <span class="text-brand-purple">crescer</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Academias de pequeno porte sofrem com a gestão manual. Veja como o LevantaDAI muda o jogo.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Old Way -->
+                <div class="bg-red-500/5 border border-red-500/20 p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">JEITO ANTIGO</div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-gray-400">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                            <span>Fichas de papel que rasgam, somem e geram lixo.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-400">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                            <span>Professor perde tempo montando treino manualmente toda hora.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-400">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                            <span>Aluno desmotivado sem saber seu progresso.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-400">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                            <span>Falta de controle de quem pagou e quem está inadimplente.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- New Way -->
+                <div class="bg-brand-purple/5 border border-brand-purple/30 p-8 rounded-2xl relative overflow-hidden shadow-lg shadow-purple-900/10">
+                    <div class="absolute top-0 right-0 bg-brand-purple text-white text-xs font-bold px-3 py-1 rounded-bl-lg">COM GYM APP</div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-white">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span><strong>App Próprio:</strong> O treino no celular do aluno, moderno e prático.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-white">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span><strong>Biblioteca de Exercícios:</strong> Montagem de treino em segundos com vídeos/gifs.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-white">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span><strong>Gamificação:</strong> Check-ins, ofensiva e metas que viciam no treino.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-white">
+                            <i class="fa-solid fa-check text-green-400 mt-1"></i>
+                            <span><strong>Gestão Automática:</strong> Controle financeiro e de acesso simplificado.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section (The App) -->
+    <section id="app" class="py-20 bg-brand-dark relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Athletes Images Grid -->
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="relative group">
+                        <img src="assets/images/dashboard.jpg" alt="Dashboard" class="rounded-2xl shadow-2xl border-4 border-brand-surface transform translate-y-8 group-hover:translate-y-4 transition duration-500 w-full h-auto object-cover" onerror="this.style.display='none'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-purple/50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition"></div>
+                    </div>
+                    <div class="relative group">
+                        <img src="assets/images/athlete_male.png" alt="Atleta Feminina" class="rounded-2xl shadow-2xl border-4 border-brand-surface transform group-hover:scale-105 transition duration-500 w-full h-auto object-cover" onerror="this.style.display='none'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition"></div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="lg:w-1/2">
+                    <h3 class="text-brand-pink font-bold uppercase tracking-wider mb-2">Experiência do Aluno</h3>
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6">Entregue a experiência das grandes redes na sua academia</h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-4 group">
+                            <div class="w-12 h-12 rounded-lg bg-brand-purple/20 flex items-center justify-center text-brand-purple shrink-0 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-person-running text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Treinos Interativos 3D</h4>
+                                <p class="text-gray-400">Acabe com a dúvida "como faz esse exercício?". O app mostra a execução correta (GIFs/Imagens), séries, repetições e descanso.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 group">
+                            <div class="w-12 h-12 rounded-lg bg-brand-blue/20 flex items-center justify-center text-brand-blue shrink-0 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-trophy text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Gamificação e Engajamento</h4>
+                                <p class="text-gray-400">Sistema de Check-in, histórico de frequência e "ofensiva" (streak). O aluno se sente motivado a não quebrar a sequência.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 group">
+                            <div class="w-12 h-12 rounded-lg bg-brand-pink/20 flex items-center justify-center text-brand-pink shrink-0 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-qrcode text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Autoatendimento</h4>
+                                <p class="text-gray-400">Check-in via QR Code e visualização de planos. Menos fila na recepção, mais treino.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Management Section -->
+    <section id="gestao" class="py-20 bg-brand-surface border-y border-white/5 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-purple/5 via-transparent to-brand-blue/5"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">O <span class="text-brand-blue">Comando Central</span> da sua Academia</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Ferramenta de gestão agnóstica por segmentação - Perfeita para academias que querem crescer profissionalmente</p>
+            </div>
+            
+            <!-- Dashboard Image -->
+            <div class="mb-12 max-w-6xl mx-auto">
+                <div class="relative group">
+                    <img src="assets/images/horarios_pico.jpg" alt="Banner LevantaDAI" class="rounded-3xl shadow-2xl max-w-full h-auto border-4 border-brand-purple/30 pulse-glow" onerror="this.style.display='none'">
+
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition flex items-end justify-center pb-8">
+                        <a href="https://meugestor.deacademias.com.br" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-brand-purple to-brand-pink text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl transform hover:scale-105 transition">
+                            <i class="fa-solid fa-external-link-alt mr-2"></i> Acessar Ferramenta de Gestão
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-white/5 hover:bg-white/10 transition border border-white/5 group backdrop-blur-sm">
+                    <div class="w-14 h-14 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition pulse-glow">
+                        <i class="fa-solid fa-users text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Gestão de Alunos</h3>
+                    <p class="text-gray-400 text-sm">Cadastre, bloqueie, renove planos e acompanhe o vencimento de matrículas em um clique.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white/5 hover:bg-white/10 transition border border-white/5 group backdrop-blur-sm">
+                    <div class="w-14 h-14 bg-brand-purple rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition pulse-glow">
+                        <i class="fa-solid fa-dumbbell text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Editor de Treinos</h3>
+                    <p class="text-gray-400 text-sm">Crie treinos personalizados (ABC, Full Body) rapidamente usando nossa base de exercícios.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white/5 hover:bg-white/10 transition border border-white/5 group backdrop-blur-sm">
+                    <div class="w-14 h-14 bg-brand-pink rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition pulse-glow">
+                        <i class="fa-solid fa-chart-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dashboard Financeiro</h3>
+                    <p class="text-gray-400 text-sm">Saiba exatamente quanto entra e sai. Previsibilidade para investir em novos equipamentos.</p>
+                </div>
+            </div>
+
+            <!-- Link para Ferramenta de Gestão -->
+            <div class="mt-12">
+                <a href="https://meugestor.deacademias.com.br" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-gradient-to-r from-brand-purple to-brand-blue text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition pulse-glow">
+                    <i class="fa-solid fa-rocket"></i>
+                    <span>Conheça nossa Plataforma de Gestão Agnóstica</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <p class="text-gray-500 text-sm mt-4">Sistema completo para gestão de academias com segmentação inteligente</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos de Treino Section -->
+    <section id="planos" class="py-20 bg-brand-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-purple/10 via-transparent to-brand-pink/10"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Planos de Treino <span class="text-gradient">Personalizados</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Crie e gerencie planos de treino completos para seus alunos com nossa ferramenta de gestão</p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="relative group">
+                    <img src="assets/images/Planos_treino.jpg" alt="Planos de Treino" class="rounded-3xl shadow-2xl border-4 border-brand-purple/30 w-full h-auto transform group-hover:scale-[1.02] transition duration-500" onerror="this.style.display='none'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/50 to-transparent rounded-3xl flex flex-col items-center justify-end pb-12 px-8">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Sistema Completo de Gestão de Treinos</h3>
+                        <p class="text-gray-300 mb-6 text-center max-w-2xl">Monte planos personalizados, acompanhe o progresso dos alunos e aumente a retenção com treinos que realmente funcionam.</p>
+                        <a href="#contato" class="bg-gradient-to-r from-brand-purple to-brand-pink text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition">
+                            <i class="fa-solid fa-dumbbell mr-2"></i> Começar Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Ecosystem Ref -->
+    <section class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8">Faça parte do <span class="text-brand-purple">Ecossistema</span> que transforma clientes em força de vendas</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-8">Assim como no programa "TaDeVolta", nossa missão é fazer com que seus alunos tenham tanto resultado e satisfação que tragam novos amigos para treinar.</p>
+            
+            <!-- Link para TaDeVolta -->
+            <div class="mb-12">
+                <a href="https://meugestor.deacademias.com.br" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-xl font-semibold transition backdrop-blur-sm">
+                    <i class="fa-solid fa-link"></i>
+                    <span>Conheça o Ecossistema TaDeVolta</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-8 opacity-50 grayscale hover:grayscale-0 transition duration-500">
+                <!-- Logos fictícios para prova social -->
+                <div class="flex items-center gap-2 text-xl font-bold"><i class="fa-solid fa-dumbbell"></i> Iron Gym</div>
+                <div class="flex items-center gap-2 text-xl font-bold"><i class="fa-solid fa-heart-pulse"></i> Vitality</div>
+                <div class="flex items-center gap-2 text-xl font-bold"><i class="fa-solid fa-bolt"></i> PowerFit</div>
+                <div class="flex items-center gap-2 text-xl font-bold"><i class="fa-solid fa-fire"></i> CrossLife</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section id="contato" class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-purple to-brand-blue opacity-20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="bg-brand-surface/80 backdrop-blur-lg border border-white/10 rounded-3xl p-8 md:p-16 text-center max-w-4xl mx-auto shadow-2xl">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Pronto para modernizar sua academia?</h2>
+                <p class="text-xl text-gray-300 mb-10">Não deixe para depois. A concorrência já está se digitalizando. Garanta a melhor ferramenta de gestão para academias de pequeno porte agora.</p>
+                
+                <form id="contact-form" class="max-w-md mx-auto space-y-4 text-left" onsubmit="handleWhatsAppSubmit(event)">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Nome da Academia</label>
+                        <input type="text" id="academia-nome" name="academia" required class="w-full bg-brand-dark border border-white/10 rounded-lg px-4 py-3 focus:border-brand-purple focus:outline-none transition" placeholder="Ex: Academia do Bairro">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Seu WhatsApp</label>
+                        <input type="tel" id="whatsapp-number" name="whatsapp" required class="w-full bg-brand-dark border border-white/10 rounded-lg px-4 py-3 focus:border-brand-purple focus:outline-none transition" placeholder="(00) 00000-0000">
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold text-lg py-4 rounded-lg transition transform hover:scale-[1.02] shadow-lg">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> Falar com um Consultor GYM
+                    </button>
+                    <p class="text-xs text-center text-gray-500 mt-4">Sem compromisso. Teste gratuito disponível.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark pt-16 pb-8 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <i class="fa-solid fa-dumbbell text-brand-purple text-2xl"></i>
+                    <span class="text-xl font-bold">Gym<span class="text-brand-pink">App</span></span>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    &copy; 2024 SystentandoBR. Todos os direitos reservados.
+                </div>
+            </div>
+            <div class="text-center text-xs text-gray-600">
+                Desenvolvido com foco em resultados reais.
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="#" onclick="handleWhatsAppClick(event)" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-green-600 transition z-50 animate-bounce">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // ============================================
+        // CONFIGURAÇÃO DO WHATSAPP E CHATBOT
+        // ============================================
+        
+        // URL do chatbot TaDeVolta para segmento Gym
+        const CHATBOT_URL = 'https://chatbot.deacademias.com.br/#/chatbot?unitId=#BR#ALL#SYSTEM#0001&segment=gym';
+        
+        // Número do WhatsApp para contato (formato: código do país + DDD + número)
+        // Exemplo: 5511999999999 (Brasil: 55 + DDD 11 + número 999999999)
+        // IMPORTANTE: Substitua pelo número real de atendimento
+        const WHATSAPP_NUMBER = '5511999999999';
+        
+        /**
+         * Formata número de telefone removendo caracteres não numéricos
+         */
+        function formatPhoneNumber(phone) {
+            return phone.replace(/\D/g, '');
+        }
+        
+        /**
+         * Constrói mensagem de boas-vindas para o WhatsApp
+         */
+        function buildWelcomeMessage(academiaNome, whatsapp) {
+            const message = `👋 Olá! Vim através da landing page *LevantaDAI Bora Treinar* e gostaria de conhecer a solução completa de *Gestão de Academias*.
+
+📋 *Meus dados:*
+🏋️ Academia: ${academiaNome || 'Não informado'}
+📱 WhatsApp: ${whatsapp || 'Não informado'}
+
+💬 Para conhecer melhor nossa solução e tirar suas dúvidas, acesse nosso chatbot especializado:
+${CHATBOT_URL}
+
+🚀 Estou pronto para modernizar minha academia!`;
+
+            return encodeURIComponent(message);
+        }
+        
+        /**
+         * Handler para envio do formulário via WhatsApp
+         */
+        function handleWhatsAppSubmit(event) {
+            event.preventDefault();
+            
+            const academiaNome = document.getElementById('academia-nome').value.trim();
+            const whatsapp = document.getElementById('whatsapp-number').value.trim();
+            
+            if (!academiaNome || !whatsapp) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+            
+            const message = buildWelcomeMessage(academiaNome, whatsapp);
+            const whatsappUrl = `https://wa.me/${formatPhoneNumber(WHATSAPP_NUMBER)}?text=${message}`;
+            
+            // Abre o WhatsApp em nova aba
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        /**
+         * Handler para clique no botão flutuante do WhatsApp
+         */
+        function handleWhatsAppClick(event) {
+            event.preventDefault();
+            
+            const message = `👋 Olá! Vim através da landing page *LevantaDAI Bora Treinar* e gostaria de conhecer a solução completa de *Gestão de Academias*.
+
+💬 Para conhecer melhor nossa solução e tirar suas dúvidas, acesse nosso chatbot especializado:
+${CHATBOT_URL}
+
+🚀 Estou pronto para modernizar minha academia!`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${formatPhoneNumber(WHATSAPP_NUMBER)}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+
+</body>
+</html>

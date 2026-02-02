@@ -1,16 +1,34 @@
 from fasthtml.common import *
+from pathlib import Path
+from starlette.responses import Response
 
 app = FastHTML(
     # https://fastht.ml/docs/tutorials/by_example.html#styling-basics
-    hdrs=(picolink) # comment this out to remove picocss styling
+    # Removido picolink pois a landing page usa Tailwind CSS
 )
+
+# Caminho para o arquivo HTML da landing page
+LANDING_PAGE_PATH = Path(__file__).parent / "levanta-dai-bora-treinar" / "index.html"
 
 @app.route('/')
 def get():
-    return Div(
-        P("Hello World!"),
-        A("click me", href="/example")
-    )
+    """Carrega e serve o index.html da landing page LevantaDAI"""
+    try:
+        # Lê o conteúdo do arquivo HTML
+        html_content = LANDING_PAGE_PATH.read_text(encoding='utf-8')
+        # Retorna o HTML como Response HTTP com content-type correto
+        return Response(content=html_content, media_type="text/html")
+    except FileNotFoundError:
+        return Div(
+            H1("Erro: Arquivo não encontrado"),
+            P(f"O arquivo {LANDING_PAGE_PATH} não foi encontrado."),
+            P("Verifique se o caminho está correto.")
+        )
+    except Exception as e:
+        return Div(
+            H1("Erro ao carregar a landing page"),
+            P(f"Erro: {str(e)}")
+        )
 
 # For a slightly more complex page, browse to "/example"
 @app.route('/example')
