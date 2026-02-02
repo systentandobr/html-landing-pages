@@ -1,14 +1,25 @@
 from fasthtml.common import *
 from pathlib import Path
-from starlette.responses import Response
+from starlette.responses import Response, FileResponse
+from starlette.staticfiles import StaticFiles
+import mimetypes
 
 app = FastHTML(
     # https://fastht.ml/docs/tutorials/by_example.html#styling-basics
     # Removido picolink pois a landing page usa Tailwind CSS
 )
 
-# Caminho para o arquivo HTML da landing page
-LANDING_PAGE_PATH = Path(__file__).parent / "levanta-dai-bora-treinar" / "index.html"
+# Caminhos base
+BASE_DIR = Path(__file__).parent
+LANDING_PAGE_DIR = BASE_DIR / "levanta-dai-bora-treinar"
+LANDING_PAGE_PATH = LANDING_PAGE_DIR / "index.html"
+ASSETS_DIR = LANDING_PAGE_DIR / "assets"
+
+# Monta arquivos estáticos da pasta assets
+try:
+    app.mount("/assets", StaticFiles(directory=str(ASSETS_DIR)), name="assets")
+except Exception as e:
+    print(f"Aviso: Não foi possível montar arquivos estáticos: {e}")
 
 @app.route('/')
 def get():
@@ -29,6 +40,14 @@ def get():
             H1("Erro ao carregar a landing page"),
             P(f"Erro: {str(e)}")
         )
+
+@app.route('/favicon.ico')
+def get_favicon():
+    """Serve o favicon (retorna 404 se não existir)"""
+    favicon_path = LANDING_PAGE_DIR / "favicon.ico"
+    if favicon_path.exists():
+        return FileResponse(path=str(favicon_path), media_type="image/x-icon")
+    return Response(content="", status_code=404)
 
 # For a slightly more complex page, browse to "/example"
 @app.route('/example')
