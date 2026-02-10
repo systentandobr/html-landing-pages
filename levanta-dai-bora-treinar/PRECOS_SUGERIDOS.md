@@ -8,10 +8,10 @@ Planos e preços criados com base nas funcionalidades avançadas do sistema **Ta
 
 ## Estrutura de Planos
 
-### Plano Essencial - R$ 256/mês (R$ 205/mês no anual)
+### Plano Essencial - R$ 333/mês (R$ 266/mês no anual)
 **Para academias iniciantes (até 100 alunos)**
 
-**Custo por aluno:** R$ 2,56/mês (mensal) | R$ 2,05/mês (anual)
+**Custo por aluno:** R$ 3,33/mês (mensal) | R$ 2,66/mês (anual)
 
 **Inclui:**
 - App do aluno com treinos personalizados
@@ -23,8 +23,8 @@ Planos e preços criados com base nas funcionalidades avançadas do sistema **Ta
 - Suporte por email
 
 **Valores:**
-- Mensal: R$ 256/mês (Total anual: R$ 3.072)
-- Anual: R$ 205/mês (Economia: R$ 612/ano)
+- Mensal: R$ 333/mês (Total anual: R$ 3.996)
+- Anual: R$ 266/mês (Economia: R$ 804/ano)
 
 **Limitações:**
 - Sem gamificação completa
@@ -33,10 +33,10 @@ Planos e preços criados com base nas funcionalidades avançadas do sistema **Ta
 
 ---
 
-### Plano Profissional - R$ 517/mês (R$ 414/mês no anual)
+### Plano Profissional - R$ 1.149/mês (R$ 919/mês no anual)
 **Para academias em crescimento (até 300 alunos)** ⭐ MAIS POPULAR
 
-**Custo por aluno:** R$ 1,72/mês (mensal) | R$ 1,38/mês (anual)
+**Custo por aluno:** R$ 3,83/mês (mensal) | R$ 3,06/mês (anual)
 
 **Inclui:**
 - Tudo do Plano Essencial
@@ -51,8 +51,8 @@ Planos e preços criados com base nas funcionalidades avançadas do sistema **Ta
 - Suporte prioritário (chat)
 
 **Valores:**
-- Mensal: R$ 517/mês (Total anual: R$ 6.204)
-- Anual: R$ 414/mês (Economia: R$ 1.236/ano)
+- Mensal: R$ 1.149/mês (Total anual: R$ 13.788)
+- Anual: R$ 919/mês (Economia: R$ 2.760/ano)
 
 **Limitações:**
 - Sem cashback para alunos
@@ -60,10 +60,10 @@ Planos e preços criados com base nas funcionalidades avançadas do sistema **Ta
 
 ---
 
-### Plano Premium - R$ 907/mês (R$ 726/mês no anual)
+### Plano Premium - R$ 3.520/mês (R$ 2.816/mês no anual)
 **Para academias estabelecidas (até 800 alunos)**
 
-**Custo por aluno:** R$ 1,13/mês (mensal) | R$ 0,91/mês (anual)
+**Custo por aluno:** R$ 4,40/mês (mensal) | R$ 3,52/mês (anual)
 
 **Inclui:**
 - Tudo do Plano Profissional
@@ -77,8 +77,8 @@ Planos e preços criados com base nas funcionalidades avançadas do sistema **Ta
 - Onboarding personalizado
 
 **Valores:**
-- Mensal: R$ 907/mês (Total anual: R$ 10.884)
-- Anual: R$ 726/mês (Economia: R$ 2.172/ano)
+- Mensal: R$ 3.520/mês (Total anual: R$ 42.240)
+- Anual: R$ 2.816/mês (Economia: R$ 8.448/ano)
 
 ---
 
@@ -192,7 +192,7 @@ Planos e preços criados com base nas funcionalidades avançadas do sistema **Ta
 
 ### Desconto Anual
 - **20% de desconto** no pagamento anual
-- Exemplo: Plano Profissional sai de R$ 6.204/ano para R$ 4.968/ano
+- Exemplo: Plano Profissional sai de R$ 13.788/ano para R$ 11.028/ano
 
 ### Teste Gratuito
 - **14 dias gratuitos** com todas as funcionalidades do Plano Profissional
@@ -252,6 +252,6 @@ A seção de preços foi adicionada ao arquivo `index.html` com:
 ---
 
 **Data de criação:** 09/02/2026  
-**Atualizado em:** 09/02/2026  
+**Atualizado em:** 10/02/2026  
 **Baseado em:** Sistema TaDeVolta v1.0 + Gym App  
-**Status:** Implementado na landing page
+**Status:** Preços atualizados conforme index.html
