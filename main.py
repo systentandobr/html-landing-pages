@@ -32,7 +32,7 @@ except Exception as e:
 
 # quando carregar a rota principal vamos criar umas regras para identificar o dominio de origem e carregar o contexto especifico
 # se o dominio for *deacademias.com.br carregar a landing page levanta-dai
-# se o dominio for *systentando.com.br/br carregar a landing page systentando
+# se o dominio for *systentando.com/br carregar a landing page systentando
 
 @app.route('/gymapp')
 def serve_gymapp():
@@ -50,7 +50,7 @@ def serve_gymapp():
 
 @app.route('/br')
 def serve_systentando():
-     """Serve o site compilado do Ecossistema Systentando"""
+    """Serve o site compilado do Ecossistema Systentando"""
     try:
         if not SITE_SYSTENTANDO_PATH.exists():
             return Div(
@@ -79,7 +79,7 @@ def get(req):
     # Lógica de roteamento por domínio
     if "deacademias.com.br" in host:
         return serve_gymapp()
-    elif "systentando.com.br" in host:
+    elif "systentando.com" in host:
         return serve_systentando()
     
     # Fallback para desenvolvimento local ou outros domínios
